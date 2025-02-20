@@ -1,13 +1,22 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
+import { Command } from 'commander';
 const program = new Command();
+import path from 'node:path';
+import getDiff from '../src/index.js';
 
 program
   .name('gendiff')
   .description('Compares two configuration files and shows a difference.')
   .version('1.0.0', '-V, --version', 'output the version number')
   .arguments('<filepath1> <filepath2>')
-  .option('-f, --format [type]', 'output format');
+  .option('-f, --format [type]', 'output format')
+  .action((filepath1, filepath2) => {
+    const fullPath1 = path.resolve(process.cwd(), filepath1);
+    const fullPath2 = path.resolve(process.cwd(), filepath2);
+
+    const diff = getDiff(fullPath1, fullPath2);
+    console.log(diff);
+  });
 
 program.parse();
