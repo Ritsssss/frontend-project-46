@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import fs from 'node:fs';
 import path from 'path';
+import _ from 'lodash';
 
 const getDiff = (filePath1, filePath2) => {
   const ext1 = path.extname(filePath1);
@@ -14,9 +15,26 @@ const getDiff = (filePath1, filePath2) => {
     const parsedFile1 = JSON.parse(contentPath1);
     const parsedFile2 = JSON.parse(contentPath2);
 
-    return `File 1: ${JSON.stringify(parsedFile1)}\nFile 2: ${JSON.stringify(parsedFile2)}`;  
+    const keys1 = Object.keys(parsedFile1);
+    const keys2 = Object.keys(parsedFile2);
+
+    const allKeys = _.sortBy(_.union(keys1, keys2));
+
+    const result = allKeys.map((key) => {
+      if (!parsedFile2.hasOwnProperty(key)) {
+        return ` - ${key}: ${parsedFile1[key]}`;
+      }
+      if (!parsedFile1.hasOwnProperty(key)) {
+        return ` + ${key}: ${parsedFile2[key]}`;
+      }
+      if (parsedFile1[key] === parsedFile2[key]) {
+        return `   ${key}: ${parsedFile1[key]}`;
+      }
+      return ` - ${key}: ${parsedFile1[key]}\n + ${key}: ${parsedFile2[key]}`;
+    });
+
+    return `{\n${result.join('\n')}\n}`;
   }
-  else return `Check the files' format`;
-}
+};
 
 export default getDiff;
