@@ -1,4 +1,4 @@
-import fs, { readFileSync } from 'node:fs';
+import fs from 'node:fs';
 import path from 'path';
 import _ from 'lodash';
 
@@ -19,10 +19,10 @@ const getDiff = (filePath1, filePath2) => {
     const allKeys = _.sortBy(_.union(keys1, keys2));
 
     const result = allKeys.map((key) => {
-      if (!parsedFile2.hasOwnProperty(key)) {
+      if (!Object.hasOwn(parsedFile2, key)) {
         return ` - ${key}: ${parsedFile1[key]}`;
       }
-      if (!parsedFile1.hasOwnProperty(key)) {
+      if (!Object.hasOwn(parsedFile1, key)) {
         return ` + ${key}: ${parsedFile2[key]}`;
       }
       if (parsedFile1[key] === parsedFile2[key]) {
@@ -33,6 +33,7 @@ const getDiff = (filePath1, filePath2) => {
 
     return `{\n${result.join('\n')}\n}`;
   }
+  return null;
 };
 
 export default getDiff;
