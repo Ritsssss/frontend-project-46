@@ -4,6 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9ebf56425ca1f3f94b78/test_coverage)](https://codeclimate.com/github/Ritsssss/frontend-project-46/test_coverage)
 [![Node CI](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml/badge.svg)](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml)
 [![hexlet-check](https://github.com/Ritsssss/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ritsssss/frontend-project-46/actions/workflows/hexlet-check.yml)
+
 **Step 4: Comparison of Flat JSON Files**
 Command: `gendiff filepath1.json filepath2.json`
 
