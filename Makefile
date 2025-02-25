@@ -1,5 +1,8 @@
+install:
+	npm ci
+
 lint:
 	npx eslint .
 
-report:
-	npm test -- --coverage
+test:
+	npm test
