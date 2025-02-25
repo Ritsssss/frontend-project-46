@@ -1,5 +1,4 @@
-import { readFileSync } from 'node:fs';
-import fs from 'node:fs';
+import fs, { readFileSync } from 'node:fs';
 import path from 'path';
 import _ from 'lodash';
 
@@ -8,7 +7,6 @@ const getDiff = (filePath1, filePath2) => {
   const ext2 = path.extname(filePath2);
 
   if (ext1 === '.json' && ext2 === '.json') {
-
     const contentPath1 = fs.readFileSync(filePath1);
     const contentPath2 = fs.readFileSync(filePath2);
 

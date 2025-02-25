@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-const program = new Command();
 import path from 'node:path';
 import getDiff from '../src/index.js';
+
+const program = new Command();
 
 program
   .name('gendiff')
