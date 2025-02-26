@@ -13,3 +13,10 @@ Command: `gendiff filepath1.json filepath2.json`
 - A key with + means the value was changed or added in the second file.
 
 Asciinema: https://asciinema.org/a/AEh5U7iFYZSCH9di1vfhy5eXB
+
+**Step 6: Comparison of Flat YAML files**
+Command: `gendiff filepath1.yml filepath2.yml`
+
+Same result expected as in Step 4
+
+Asciinema: https://asciinema.org/a/HYDRk1IfyMX8zHT471YPSIrRi
