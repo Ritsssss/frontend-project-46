@@ -35,3 +35,10 @@ Command: gendiff filepath1.ext filepath2.ext --format plain/stylish`
 - The user can specify the output format as the third parameter (`plain` or `stylish`).
 
 Asciinema: https://asciinema.org/a/rDK71Y6qP2vybzS4LFhiqjgwU
+
+**Step 9: Addiitonall formatter Json**
+Command: gendiff filepath1.ext filepath2.ext --format json`
+
+- Json format can now be selected as the third parameter (`json`).
+
+Asciinema: https://asciinema.org/a/EhqFsICJdl5UJJkh4mtU6WmCt
