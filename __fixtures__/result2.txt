@@ -1,10 +1,10 @@
 {
-   age: 30
- - firstName: John
- + firstName: Jo
-   hobbies: reading, coding
- - lastName: Doe
- + lastName: March
- - occupation: Engineer
- + occupation: Developer
+    age: 30
+  - firstName: John
+  + firstName: Jo
+    hobbies: reading, coding
+  - lastName: Doe
+  + lastName: March
+  - occupation: Engineer
+  + occupation: Developer
 }

@@ -20,3 +20,11 @@ Command: `gendiff filepath1.yml filepath2.yml`
 Same result expected as in Step 4
 
 Asciinema: https://asciinema.org/a/HYDRk1IfyMX8zHT471YPSIrRi
+
+**Step 7: Comparison of Nested JSON & YML files**
+Command: `gendiff filepath1.ext filepath2.ext`
+
+- The program compares two files, including nested objects. 
+- The default output format is **Stylish**.
+
+Asciinema: https://asciinema.org/a/nhTS8n70ETNDDzjIKFOlsGk9d
