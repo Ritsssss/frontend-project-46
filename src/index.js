@@ -2,15 +2,9 @@ import fs from 'node:fs';
 import path from 'path';
 import _ from 'lodash';
 import parse from './parsers.js';
-import formatStylish from './stylish.js';
-
-const formatters = {
-  stylish: formatStylish,
-};
+import formatter from '../formatters/index.js';
 
 function getDiff(filePath1, filePath2, format = 'stylish') {
-  const formatter = formatters[format] || formatStylish;
-
   const ext1 = path.extname(filePath1);
   const ext2 = path.extname(filePath2);
 
@@ -45,7 +39,7 @@ function getDiff(filePath1, filePath2, format = 'stylish') {
     return result;
   };
   const diff = iter(object1, object2);
-  return formatter(diff);
+  return formatter(format)(diff);
 }
 
 export default getDiff;

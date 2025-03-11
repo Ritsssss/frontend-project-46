@@ -11,7 +11,6 @@ const formatValue = (value, depth) => {
 
 const format = (tree, depth = 1) => {
   const indent = ' '.repeat(depth * 4 - 2);
-
   const lines = tree.flatMap((node) => {
     switch (node.type) {
       case 'nested':

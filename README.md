@@ -28,3 +28,10 @@ Command: `gendiff filepath1.ext filepath2.ext`
 - The default output format is **Stylish**.
 
 Asciinema: https://asciinema.org/a/nhTS8n70ETNDDzjIKFOlsGk9d
+
+**Step 8: Additional formatter Plain**
+Command: gendiff filepath1.ext filepath2.ext --format plain/stylish`
+
+- The user can specify the output format as the third parameter (`plain` or `stylish`).
+
+Asciinema: https://asciinema.org/a/rDK71Y6qP2vybzS4LFhiqjgwU
