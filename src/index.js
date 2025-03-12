@@ -5,11 +5,14 @@ import parse from './parsers.js';
 import formatter from '../formatters/index.js';
 
 function getDiff(filePath1, filePath2, format = 'stylish') {
-  const ext1 = path.extname(filePath1);
-  const ext2 = path.extname(filePath2);
+  const fullPath1 = path.resolve(process.cwd(), filePath1);
+  const fullPath2 = path.resolve(process.cwd(), filePath2);
 
-  const contentPath1 = fs.readFileSync(filePath1);
-  const contentPath2 = fs.readFileSync(filePath2);
+  const ext1 = path.extname(fullPath1);
+  const ext2 = path.extname(fullPath2);
+
+  const contentPath1 = fs.readFileSync(fullPath1);
+  const contentPath2 = fs.readFileSync(fullPath2);
 
   const object1 = parse(ext1, contentPath1);
   const object2 = parse(ext2, contentPath2);
