@@ -8,6 +8,6 @@ const formatters = {
   json: formatJson,
 };
 
-const formatter = (format) => formatters[format] || formatStylish;
+const formatter = (format) => formatters[format];
 
 export default formatter;
