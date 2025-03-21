@@ -1,44 +1,36 @@
-### Hexlet tests and linter status:
+# JSON/YAML Compare Tool
+
 [![Actions Status](https://github.com/Ritsssss/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ritsssss/frontend-project-46/actions)
+[![Node CI](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml/badge.svg)](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ebf56425ca1f3f94b78/maintainability)](https://codeclimate.com/github/Ritsssss/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9ebf56425ca1f3f94b78/test_coverage)](https://codeclimate.com/github/Ritsssss/frontend-project-46/test_coverage)
-[![Node CI](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml/badge.svg)](https://github.com/Ritsssss/frontend-project-46/actions/workflows/main.yml)
 
-**Step 4: Comparison of Flat JSON Files**
-Command: `gendiff filepath1.json filepath2.json`
+## Overview
+A CLI tool that compares two JSON or YAML files and outputs their differences in a specified format (stylish, plain, or json). Built in JavaScript using the Commander library.
 
-- Keys are displayed in alphabetical order.
-- If a key is present in both files with the same value, it has no + or -.
-- A key with - means the value was removed or changed in the first file.
-- A key with + means the value was changed or added in the second file.
+### Features
+- Compares two files and outputs their difference in a structured format.
+- Supports three output formats: stylish (default), plain, and json.
+- Tested with Jest and integrated with GitHub Actions for continuous testing.
+- Code quality monitored with CodeClimate.
 
-Asciinema: https://asciinema.org/a/AEh5U7iFYZSCH9di1vfhy5eXB
+### Demonstration
+- **The default format**: [View Demo](https://asciinema.org/a/nhTS8n70ETNDDzjIKFOlsGk9d)
+- **Plain format**: [View Demo](https://asciinema.org/a/rDK71Y6qP2vybzS4LFhiqjgwU)
+- **JSON format**: [View Demo](https://asciinema.org/a/EhqFsICJdl5UJJkh4mtU6WmCt)
 
-**Step 6: Comparison of Flat YAML files**
-Command: `gendiff filepath1.yml filepath2.yml`
+## Installation
+```sh
+git clone https://github.com/Ritsssss/frontend-project-46.git # Clone the repository
+cd frontend-project-46 # Navigate into the project directory
+make install # Install dependencies 
+npm link # Enable the CLI tool to be used globally
+```
 
-Same result expected as in Step 4
-
-Asciinema: https://asciinema.org/a/HYDRk1IfyMX8zHT471YPSIrRi
-
-**Step 7: Comparison of Nested JSON & YML files**
-Command: `gendiff filepath1.ext filepath2.ext`
-
-- The program compares two files, including nested objects. 
-- The default output format is **Stylish**.
-
-Asciinema: https://asciinema.org/a/nhTS8n70ETNDDzjIKFOlsGk9d
-
-**Step 8: Additional formatter Plain**
-Command: gendiff filepath1.ext filepath2.ext --format plain/stylish`
-
-- The user can specify the output format as the third parameter (`plain` or `stylish`).
-
-Asciinema: https://asciinema.org/a/rDK71Y6qP2vybzS4LFhiqjgwU
-
-**Step 9: Addiitonall formatter Json**
-Command: gendiff filepath1.ext filepath2.ext --format json`
-
-- Json format can now be selected as the third parameter (`json`).
-
-Asciinema: https://asciinema.org/a/EhqFsICJdl5UJJkh4mtU6WmCt
+## Usage
+```sh
+gendiff -h # Display help 
+gendiff -V # Show version 
+gendiff file1 file2 # Compare two files (default format: stylish) 
+gendiff --format `format` file1 file2 # Compare files in the preferred format (available formats: stylish, plain, json)
+```
